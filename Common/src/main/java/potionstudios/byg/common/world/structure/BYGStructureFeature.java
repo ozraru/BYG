@@ -2,8 +2,10 @@ package potionstudios.byg.common.world.structure;
 
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.feature.StructureFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import potionstudios.byg.common.world.structure.arch.ArchConfiguration;
 import potionstudios.byg.common.world.structure.arch.ArchStructure;
+import potionstudios.byg.common.world.structure.volcano.Volcano;
 import potionstudios.byg.mixin.access.StructureFeatureAccess;
 import potionstudios.byg.util.RegistryObject;
 
@@ -16,6 +18,7 @@ public class BYGStructureFeature {
     public static final List<RegistryObject<StructureFeature<?>>> STRUCTURES = new ArrayList<>();
 
     public static final StructureFeature<ArchConfiguration> ARCH = register("arch", new ArchStructure(ArchConfiguration.CODEC), GenerationStep.Decoration.RAW_GENERATION);
+    public static final StructureFeature<NoneFeatureConfiguration> VOLCANO = register("volcano", new Volcano(NoneFeatureConfiguration.CODEC), GenerationStep.Decoration.RAW_GENERATION);
 
     private static <F extends StructureFeature<?>> F register(String id, F structure, GenerationStep.Decoration genStep) {
         StructureFeatureAccess.byg_getSTEP().put(structure, genStep);

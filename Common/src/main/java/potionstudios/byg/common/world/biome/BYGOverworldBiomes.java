@@ -708,6 +708,22 @@ public class BYGOverworldBiomes {
         return new Biome.BiomeBuilder().precipitation(Biome.Precipitation.NONE).biomeCategory(Biome.BiomeCategory.DESERT).temperature(2.0F).downfall(0.0F).specialEffects((new BiomeSpecialEffects.Builder()).waterColor(6200521).waterFogColor(6200521).fogColor(12815488).skyColor(12815488).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(spawnSettings.build()).generationSettings(generationSettings.build()).build();
     }
 
+    public static Biome volcanicLands() {
+        MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
+        BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder();
+        BiomeDefaultFeatures.addFossilDecoration(generationSettings);
+        byg_invokeGlobalOverworldGeneration(generationSettings);
+
+//        generationSettings.addFeature(GenerationStep.Decoration.RAW_GENERATION, BYGPlacedFeatures.DUNE_TERRAIN);
+        BiomeDefaultFeatures.addDefaultOres(generationSettings);
+        BiomeDefaultFeatures.addDefaultSoftDisks(generationSettings);
+        BiomeDefaultFeatures.addDefaultFlowers(generationSettings);
+        generationSettings.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BYGPlacedFeatures.PATCH_BEACH_GRASS_NOISE);
+        BYGDefaultBiomeFeatures.addBYGDesertVegetation(generationSettings);
+
+        return new Biome.BiomeBuilder().precipitation(Biome.Precipitation.NONE).biomeCategory(Biome.BiomeCategory.DESERT).temperature(2.0F).downfall(0.0F).specialEffects((new BiomeSpecialEffects.Builder()).waterColor(6200521).waterFogColor(6200521).fogColor(12815488).skyColor(12815488).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(spawnSettings.build()).generationSettings(generationSettings.build()).build();
+    }
+
     public static Biome ebonyWoods() {
         MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
         BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder();

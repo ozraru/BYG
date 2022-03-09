@@ -14,6 +14,7 @@ public class BYGStructureSets {
     public static final Holder<StructureSet> VILLAGES = register("villages", new StructureSet(List.of(StructureSet.entry(BYGStructureFeatures.VILLAGE_RED_ROCK), StructureSet.entry(BYGStructureFeatures.VILLAGE_RUINS), StructureSet.entry(BYGStructureFeatures.VILLAGE_TROPICAL), StructureSet.entry(BYGStructureFeatures.VILLAGE_SKYRIS)), new RandomSpreadStructurePlacement(34, 8, RandomSpreadType.LINEAR, 437845874)));
     public static final Holder<StructureSet> ARCH = register("arches", new StructureSet(List.of(StructureSet.entry(BYGStructureFeatures.RED_ROCK_ARCH), StructureSet.entry(BYGStructureFeatures.DESTROYED_RED_ROCK_ARCH)), new RandomSpreadStructurePlacement(8, 2, RandomSpreadType.LINEAR, 498548954)));
     public static final Holder<StructureSet> SEA_ARCHES = register("sea_arches", new StructureSet(List.of(StructureSet.entry(BYGStructureFeatures.OVERGROWN_STONE_ARCH, 24), StructureSet.entry(BYGStructureFeatures.STONE_ARCH, 1)), new RandomSpreadStructurePlacement(5, 2, RandomSpreadType.LINEAR, 457854789)));
+    public static final Holder<StructureSet> VOLCANO = register("volcano", new StructureSet(List.of(StructureSet.entry(BYGStructureFeatures.VOLCANO)), new RandomSpreadStructurePlacement(10, 2, RandomSpreadType.LINEAR, 457854789)));
 
 
     private static Holder<StructureSet> register(String id, StructureSet set) {

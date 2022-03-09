@@ -129,6 +129,7 @@ public class BYGStructureFeatures {
         builder.withBlendingFunctionType(SimpleWeightedRandomList.<BlendingFunction>builder().add(BlendingFunction.EaseOutCubic.INSTANCE, 16).add(BlendingFunction.EaseInOutCirc.INSTANCE, 8).add(BlendingFunction.EaseOutBounce.INSTANCE, 1).build());
     }).build(), BYGBiomeTags.HAS_RED_ROCK_ARCH, false));
 
+    public static final Holder<ConfiguredStructureFeature<?, ?>> VOLCANO = register("volcano", BYGStructureFeature.VOLCANO.configured(FeatureConfiguration.NONE, BYGBiomeTags.HAS_VOLCANO, true));
 
 
     private static <FC extends FeatureConfiguration, F extends StructureFeature<FC>> Holder<ConfiguredStructureFeature<?, ?>> register(String id, ConfiguredStructureFeature<FC, F> configuredStructureFeature) {

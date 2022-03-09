@@ -26,6 +26,7 @@ public interface BlendingFunction {
         Registry.register(BYGRegistry.BLENDING_FUNCTION, BYG.createLocation("ease_out_elastic"), EaseOutElastic.CODEC);
         Registry.register(BYGRegistry.BLENDING_FUNCTION, BYG.createLocation("ease_in_circ"), EaseInCirc.CODEC);
         Registry.register(BYGRegistry.BLENDING_FUNCTION, BYG.createLocation("ease_out_quint"), EaseOutQuint.CODEC);
+        Registry.register(BYGRegistry.BLENDING_FUNCTION, BYG.createLocation("ease_in_back"), EaseInBack.CODEC);
     }
 
     record EaseInOutCirc() implements BlendingFunction {
@@ -111,6 +112,21 @@ public interface BlendingFunction {
         @Override
         public double apply(double factor) {
             return BlendingFunctions.easeOutQuint(factor);
+        }
+
+        @Override
+        public Codec<? extends BlendingFunction> codec() {
+            return CODEC;
+        }
+    }
+
+    record EaseInBack() implements BlendingFunction {
+        public static final EaseInBack INSTANCE = new EaseInBack();
+        public static final Codec<EaseInBack> CODEC = Codec.unit(() -> INSTANCE);
+
+        @Override
+        public double apply(double factor) {
+            return BlendingFunctions.easeInBack(factor);
         }
 
         @Override

@@ -48,4 +48,12 @@ public class BlendingFunctions {
     public static double easeOutQuint(double x) {
         return 1 - pow(1 - x, 5);
     }
+
+    public static double easeInBack(double x) {
+        double c1 = 1.70158;
+        double c3 = c1 + 1;
+
+        return c3 * x * x * x - c1 * x * x;
+
+    }
 }
