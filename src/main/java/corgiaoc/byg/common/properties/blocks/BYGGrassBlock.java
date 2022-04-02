@@ -46,14 +46,14 @@ public class BYGGrassBlock extends GrassBlock implements IGrowable {
 
     @Override
     public void performBonemeal(ServerWorld world, Random random, BlockPos pos, BlockState state) {
-        if (featureConfig != null) {
-            place(world, random, pos.above(), this.featureConfig);
-        } else {
-            List<ConfiguredFeature<?, ?>> flowerFeatures = world.getBiome(pos).getGenerationSettings().getFlowerFeatures();
-            ConfiguredFeature<?, ?> flowerFeature = flowerFeatures.get(random.nextInt(flowerFeatures.size()));
-            flowerFeature.place(world, world.getChunkSource().getGenerator(), random, pos);
-            Features.PATCH_GRASS_NORMAL.place(world, world.getChunkSource().getGenerator(), random, pos);
-        }
+        // if (featureConfig != null) {
+        //     place(world, random, pos.above(), this.featureConfig);
+        // } else {
+        //     List<ConfiguredFeature<?, ?>> flowerFeatures = world.getBiome(pos).getGenerationSettings().getFlowerFeatures();
+        //     ConfiguredFeature<?, ?> flowerFeature = flowerFeatures.get(random.nextInt(flowerFeatures.size()));
+        //     flowerFeature.place(world, world.getChunkSource().getGenerator(), random, pos);
+        //     Features.PATCH_GRASS_NORMAL.place(world, world.getChunkSource().getGenerator(), random, pos);
+        // }
     }
 
     public static boolean place(ISeedReader world, Random random, BlockPos pos, BlockClusterFeatureConfig config) {
